@@ -1,0 +1,38 @@
+ <!DOCTYPE html>
+ <html lang="pt-br">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alinhamento Vertical</title>
+    <style>
+        #container {
+            background-image: url('imagem/target001.png');/* Alinhamento Vertical */
+            background-size: 100% 100%;/* Ajusta a imagem para ocupar todo o espaço do elemento */
+            position: relative;/* Define o elemento como relativo para usar o posicionamento absoluto */
+            height: 96vh;/* Define a altura do elemento como 97% da altura da janela de visualização */
+            padding: 10px;/* Adiciona um preenchimento de 10 pixels ao redor do elemento */
+            background-color: purple;/* Define a cor de fundo como roxo */
+        }
+
+        #conteudo {
+            background-image: url('imagem/target001.png');/* Define a imagem de fundo do elemento */
+            background-size: 100% 100%;/* Ajusta a imagem para ocupar todo o espaço do elemento */
+            position: absolute;/* Define o elemento como absoluto para posicioná-lo em relação ao elemento pai, que seria o conteudo que esta no container */
+            height: 200px;
+            width: 200px;
+            background-color: yellow;
+            left: 50%;/* Posiciona o elemento a 50% da largura do elemento pai */
+            top: 50%;/* Posiciona o elemento a 50% da altura do elemento pai */
+            transform: translate(-50%, -50%);/* Move o elemento para cima e para a esquerda em 50% de sua própria largura e altura, centralizando-o */
+        }
+    </style>
+ </head>
+ <body>
+    <section id="container">
+        <article id="conteudo">
+
+        </article>
+    </section>
+
+ </body>
+ </html>
