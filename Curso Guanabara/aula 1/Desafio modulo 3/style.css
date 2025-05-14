@@ -1,5 +1,20 @@
 @charset "UTF-8"; /* CSS Document */
 
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans+Hebrew:wght@100..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+:root { /* Root styles */
+    --fonte1: Verdana, Geneva, Tahoma, sans-serif; /* Define font family */
+    --fonte2: 'passion One', cursive; /* Define font family */
+    --fonte3: 'Sriracha', Cursive; /* Define font family */
+}
+
+
 * { /* Reset all elements */
     margin: 0;
     padding: 0;
@@ -9,6 +24,7 @@
 html, body { 
     min-height: 100vh; /* Set minimum height to 100% of the viewport */
     background-color: darkgray; /* Set background color to dark gray */;
+    font-family: var(--fonte1); /* Set font family */
 
 }
 
@@ -22,7 +38,8 @@ header { /* Header styles */
 header > h1 { /* Header title styles */
    padding-top: 50px; /* Add top padding */
    font-variant: small-caps; /* Use small caps font variant */
-
+   font-family: var(--fonte2); /* Set font family */
+   font-size: 10vh; /* Set font size to 10% of the viewport height */
 }
 
 header > p { /* Header paragraph styles */
@@ -45,6 +62,8 @@ section { /* Section styles */
     padding-bottom: 10vh; /* Add top and bottom padding */
     line-height: 2em; /* Set line height to 2em */
     padding-left: 30px; /* Add left padding */
+    font-family: var(--fonte3); /* Set font family */
+    font-size: 3.5vw; /* Set font size to 4.5% of the viewport width */
 }
 
 section.normal { /* Normal section styles */
@@ -61,7 +80,8 @@ section.imagem { /* Image section styles */
 
 section.imagem > p { /* Image section paragraph styles */
    background-color: rgb(8, 5, 5); /* Set background color to black */;
-   width: 400px; /* Set width to 400px */
+   display: inline-block; /* Set display to inline-block */
+   padding: 5px; /* Add padding */;
 }
 
 
