@@ -1,94 +1,109 @@
-@charset "UTF-8"; /* CSS Document */
+@charset "UTF-8"; /* Documento CSS */
 
 
+/* Importa a fonte Roboto do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-
+/* Importa as fontes Playpen Sans (correto seria apenas esta, pois Roboto já foi importada) */
 @import url('https://fonts.googleapis.com/css2?family=Playpen+Sans+Hebrew:wght@100..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-
-
-:root { /* Root styles */
-    --fonte1: Verdana, Geneva, Tahoma, sans-serif; /* Define font family */
-    --fonte2: 'passion One', cursive; /* Define font family */
-    --fonte3: 'Sriracha', Cursive; /* Define font family */
+:root { /* Estilos da raiz */
+    --fonte1: Verdana, Geneva, Tahoma, sans-serif; /* Define a família de fontes */
+    --fonte2: 'passion One', cursive; /* Define a família de fontes */
+    --fonte3: 'Sriracha', cursive; /* Define a família de fontes */
 }
 
-
-* { /* Reset all elements */
+* { /* Reset para todos os elementos */
     margin: 0;
     padding: 0;
-
 }
 
-html, body { 
-    min-height: 100vh; /* Set minimum height to 100% of the viewport */
-    background-color: darkgray; /* Set background color to dark gray */;
-    font-family: var(--fonte1); /* Set font family */
-
+html, body { /* Estilos para html e body */
+    min-height: 100vh; /* Altura mínima de 100% da altura da tela */
+    background-color: darkgray; /* Cor de fundo cinza escuro */
+    font-family: var(--fonte1); /* Fonte padrão do corpo */
 }
 
-header { /* Header styles */
-    background-color: black; /* Set background color to black */
-    color: white; /* Set text color to white */
-    text-align: center; /* Center align text */
-
+header { /* Estilo do cabeçalho */
+    background-color: black; /* Fundo preto */
+    color: white; /* Texto branco */
+    text-align: center; /* Centraliza o texto */
 }
 
-header > h1 { /* Header title styles */
-   padding-top: 50px; /* Add top padding */
-   font-variant: small-caps; /* Use small caps font variant */
-   font-family: var(--fonte2); /* Set font family */
-   font-size: 10vh; /* Set font size to 10% of the viewport height */
+header > h1 { /* Título do cabeçalho */
+   padding-top: 50px; /* Espaçamento superior */
+   font-variant: small-caps; /* Letras pequenas em caixa alta */
+   font-family: var(--fonte2); /* Fonte personalizada */
+   font-size: 10vh; /* Tamanho do texto em 10% da altura da tela */
 }
 
-header > p { /* Header paragraph styles */
-    padding-bottom: 50px; /* Add bottom padding */
-   
+header > p { /* Parágrafo do cabeçalho */
+    padding-bottom: 50px; /* Espaçamento inferior */
 }
 
-header a { /* Link styles */
-    text-decoration: none; /* Remove underline from links */
-    color: white; /* Set link color to white */
-    font-weight: bolder; /* Make links bold */
+header a { /* Links no cabeçalho */
+    text-decoration: none; /* Remove sublinhado */
+    color: white; /* Cor branca */
+    font-weight: bolder; /* Texto em negrito */
 }
 
-a:hover { /* Link hover styles */
-   text-decoration: underline; /* Underline links on hover */
+a:hover { /* Quando passar o mouse sobre o link */
+   text-decoration: underline; /* Sublinha o texto */
 }
 
-section { /* Section styles */
-    padding-top: 10vh; /* Add top and bottom padding */
-    padding-bottom: 10vh; /* Add top and bottom padding */
-    line-height: 2em; /* Set line height to 2em */
-    padding-left: 30px; /* Add left padding */
-    font-family: var(--fonte3); /* Set font family */
-    font-size: 3.5vw; /* Set font size to 4.5% of the viewport width */
+section { /* Estilos das seções */
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    line-height: 2em; /* Altura da linha */
+    padding-left: 30px; /* Espaçamento à esquerda */
+    font-family: var(--fonte3); /* Fonte personalizada */
+    font-size: 3.5vw; /* Tamanho proporcional à largura da tela */
 }
 
-section.normal { /* Normal section styles */
-    background-color: white; /* Set background color to white */
-    color: black; /* Set text color to black */
-   
+section > p {
+    padding-bottom: 2em; /* Espaçamento inferior entre parágrafos */
 }
 
-section.imagem { /* Image section styles */
-    background-color: rgb(184, 27, 27); /* Set background color to light gray */
-    color: rgb(231, 216, 216); /* Set text color to black */
-    
+section.normal { /* Seção com fundo claro */
+    background-color: white; /* Fundo branco */
+    color: rgb(17, 8, 8); /* Cor do texto escura */
 }
 
-section.imagem > p { /* Image section paragraph styles */
-   background-color: rgb(8, 5, 5); /* Set background color to black */;
-   display: inline-block; /* Set display to inline-block */
-   padding: 5px; /* Add padding */;
+section.imagem { /* Seção com imagem de fundo */
+    background-color: rgb(15, 3, 3); /* Fundo cinza escuro */
+    color: rgb(121, 118, 118); /* Cor do texto clara */
+    box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.514); /* Sombra interna */
+    background-attachment: fixed; /* Imagem fixa ao rolar */
 }
 
-
-footer { /* Footer styles */
-    background-color: black; /* Set background color to black */
-    color: white; /* Set text color to white */
-    text-align: center; /* Center align text */
-    padding: 10px 0; /* Add top and bottom padding */
-    
+section.imagem > p {/* Parágrafos nas seções com imagem */
+    display: inline-block; /* Mostra em bloco na mesma linha */
+    padding: 5px; /* Espaçamento interno */
+    background-color: rgba(0, 0, 0, 0.514); /* Fundo preto semi-transparente */
+    text-shadow: 1px 1px 0px black; /* Sombra no texto */
 }
+section#img01 {/* Seçao de imagem de fundo*/
+   background-image: url("imagens/background001.jpg"); /* Caminho da imagem de fundo */
+    background-position: right center; /* Posição da imagem */
+}
+
+section#img02 {
+   background-image: url("imagens/background002.jpg"); /* Caminho da imagem */
+   background-size: cover; /* Cobrir toda a área */
+}
+
+section.imagem > p { /* Parágrafos nas seções com imagem */
+   background-color: rgba(17, 4, 4, 0.514); /* Fundo preto semi-transparente */
+   display: inline-block; /* Mostra em bloco na mesma linha */
+   padding: 5px; /* Espaçamento interno */
+   text-shadow: 6px 6px 0px black; /* Sombra no texto */
+  
+}
+
+footer { /* Rodapé */
+    background-color: black; /* Fundo preto */
+    color: white; /* Texto branco */
+    text-align: center; /* Centraliza o conteúdo */
+    padding: 10px 0; /* Espaçamento vertical */
+}
+
