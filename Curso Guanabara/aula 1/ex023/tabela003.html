@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade -->
+    <title>Tabelas</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif; /* Fonte da página */
+        }
+
+        table {
+            border-collapse: collapse; /* Junta as bordas das células */
+            width: 50%; /* Define a largura da tabela como 50% da tela */
+        }
+
+        td {
+            border: 1px solid #0e0c0c; /* Borda preta fina nas células */
+            padding: 10px; /* Espaçamento interno */
+            text-align: center; /* Centraliza o conteúdo */
+        }
+    </style>
+</head>
+<body>
+    <h1>Mesclagem de Células</h1>
+    <table>
+        <tr>
+            <td rowspan="2">A</td> <!-- A ocupa 2 linhas (mesclagem vertical) -->
+            <td>B</td>
+            <td>C</td>
+        </tr>
+        <tr>
+            <!-- Aqui não há <td> para D porque A ocupa esta linha também -->
+            <td colspan="2">E e F</td> <!-- Mescla horizontalmente 2 colunas -->
+        </tr>
+        <tr>
+            <td>G</td>
+            <td>H</td>
+            <td>I</td>
+        </tr>
+        <tr>
+            <td colspan="3">J, L e M</td> <!-- Mescla as 3 colunas da linha inteira -->
+        </tr>
+    </table>
+</body>
+</html>
