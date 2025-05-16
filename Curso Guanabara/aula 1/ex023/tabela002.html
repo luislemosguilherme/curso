@@ -5,28 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabela</title>
     <style>
-        body {
+        body {/* corpo da página */
             font-family: Arial, Helvetica, sans-serif;
         }
 
-        table {
+        table {/* tabela */
             width: 500px;
             border-collapse: collapse;
+            position: relative ;/* posição relativa */
         }
 
-        td, th {
+        td, th {/* células e cabeçalhos da tabela */
             border: 1px solid black;
             padding: 8px;
+           
         }
 
-        thead, tfoot {
+        caption {/* título da tabela */
+            font-size: 1.2em;/* tamanho da fonte */
+            font-weight: bold;/* negrito */
+            padding: 10px;/* espaçamento interno */
+            background-color: lightgray;/* cor de fundo */
+
+        }
+
+        thead, tfoot {/* cabeçalho e rodapé da tabela */
             background-color: gray;
             color: white;
         }
 
-        td.num {
+        thead > tr th {/* cabeçalho da tabela */
+          position: sticky;/* posição fixa */
+          top: -1px;/* distância do topo */
+          background-color: gray;/* cor de fundo */
+        }
+
+        tbody tr:nth-child(2n) {/* estilo para linhas pares */
+            background-color: #ddcfcf;
+        }
+
+        td.num {/* células com números */
             text-align: right;
         }
+
     </style>
 </head>
 <body>
@@ -41,11 +62,6 @@
                 <th scope="col" style="width: 50px;">População</th>
             </tr>
         </thead>
-
-        <tr>
-            <th>Total de Habitantes</th>
-            <td class="num"><strong>250.584.125</strong></td>
-        </tr>
 
         <tbody>
             <tr>
