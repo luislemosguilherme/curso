@@ -1,6 +1,56 @@
 @charset "UTF-8";
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/jNQXAC9IVRw?si=dqR1IRtY__l5Q50j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+body { /* Define a cor de fundo da página */
+   background-color:rgb(13, 26, 45); /* Cor de fundo */
+   font-family: Arial, Helvetica, sans-serif; /* Fonte padrão */
+   color: white; /* Cor do texto */
+   text-align: center; /* Centraliza o texto */
+   padding: 10px; /* Espaçamento interno */
+   margin: 1px;
+
+   
+  
+}
+
+iframe { /* Estiliza o iframe do vídeo */
+    display: block;   /* Bloco para aplicar margem */
+    background-color: rgb(21, 39, 63); /* Cor de fundo */
+    width: 300px; /* Largura do vídeo */
+    height: 250px; /* Altura do vídeo */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 10px; /* Espaçamento interno */
+    margin: 10px auto; /* Margem superior/inferior */
+    border: 1px solid rgb(21, 39, 63); /* Borda do vídeo */
+    text-align: center; /* Centraliza o texto */
+
+}
+ 
+
+.fundo {/* Estiliza o fundo do vídeo */
+    padding-top: 50px; /* Espaçamento superior para rolagem */
+    text-align: center; /* Centraliza o texto */
+    background-color: rgb(13, 26, 45);
+  
+   
+}
+
+.video { /* Estiliza o vídeo */
+    display: block;     /* Bloco para aplicar margem */
+    background-color: rgb(21, 39, 63); /* Cor de fundo */
+    border-radius: 10px;      /* Bordas arredondadas */
+    padding: 50px;      /* Espaçamento interno */
+    margin: 50px auto;     /* Margem superior/inferior */
+    width: 40%;         /* Largura total */
+    height: 90%;        /* Altura do vídeo */
+    text-align: center; /* Centraliza o texto */
+
+}
+
+
+  
+
+
 
 
 
