@@ -13,7 +13,7 @@ body { /* Define a cor de fundo da página */
   
 }
 
-iframe { /* Estiliza o iframe do vídeo */
+.video iframe { /* Estiliza o iframe do vídeo */
     display: block;   /* Bloco para aplicar margem */
     background-color: rgb(21, 39, 63); /* Cor de fundo */
     width: 300px; /* Largura do vídeo */
@@ -23,6 +23,9 @@ iframe { /* Estiliza o iframe do vídeo */
     margin: 10px auto; /* Margem superior/inferior */
     border: 1px solid rgb(21, 39, 63); /* Borda do vídeo */
     text-align: center; /* Centraliza o texto */
+
+    
+
 
 }
  
@@ -39,15 +42,22 @@ iframe { /* Estiliza o iframe do vídeo */
     display: block;     /* Bloco para aplicar margem */
     background-color: rgb(21, 39, 63); /* Cor de fundo */
     border-radius: 10px;      /* Bordas arredondadas */
-    padding: 50px;      /* Espaçamento interno */
+    padding: 50px;     /* Espaçamento interno */
     margin: 50px auto;     /* Margem superior/inferior */
-    width: 40%;         /* Largura total */
-    height: 90%;        /* Altura do vídeo */
+    width: 20%;     /* Largura total */
+    height: 80%;    /* Altura do vídeo */
     text-align: center; /* Centraliza o texto */
 
 }
 
-
+.container { /* Estiliza o contêiner */
+     margin: auto; 
+     width: 100%; /* Largura total */
+    height: 100%; /* Altura total */  
+    padding-top: 10px; /* Espaçamento interno */
+    border-radius: 10px solid ; /* Bordas arredondadas */
+    border: 1px solid rgb(21, 39, 63); /* Borda do vídeo */
+}
   
 
 
