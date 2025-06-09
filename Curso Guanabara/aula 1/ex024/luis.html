@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Loja Estilo Neutro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Animação de fade-in */
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Slide do carrinho */
+    .cart-slide {
+      transition: transform 0.3s ease-in-out;
+    }
+    .cart-hidden {
+      transform: translateX(100%);
+    }
+    .cart-visible {
+      transform: translateX(0%);
+    }
+
+    /* Efeito hover para produtos - leve sombra e escala */
+    .produto-card {
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+      border-radius: 12px;
+      background-color: #f9f9f9; /* fundo neutro e suave */
+    }
+    .produto-card:hover,
+    .produto-card:focus-within {
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transform: translateY(-6px) scale(1.02);
+      outline: none;
+      background-color: #e5e7eb; /* tom cinza claro no hover */
+    }
+
+    /* Botões com cores neutras, porém elegantes */
+    button {
+      transition: background-color 0.3s ease;
+    }
+    button:focus-visible {
+      outline: 2px solid #374151; /* foco acessível */
+      outline-offset: 2px;
+    }
+
+    /* Cores neutras para o header e links */
+    header {
+      background-color: #ffffff;
+      border-bottom: 1px solid #d1d5db; /* linha cinza clara */
+    }
+    nav a {
+      color: #4b5563; /* cinza escuro neutro */
+    }
+    nav a:hover,
+    nav a:focus {
+      color: #1f2937; /* cinza mais escuro no hover */
+      text-decoration: underline;
+    }
+
+    /* Botão do carrinho neutro */
+    .btn-carrinho {
+      background-color: #374151; /* cinza escuro */
+      color: white;
+      border-radius: 6px;
+      padding: 0.5rem 1rem;
+    }
+    .btn-carrinho:hover,
+    .btn-carrinho:focus {
+      background-color: #1f2937; /* mais escuro no hover */
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-gray-100 via-gray-50 to-gray-100 text-gray-800 font-sans">
+
+  <!-- Cabeçalho -->
+  <header class="shadow-md p-5 flex justify-between items-center sticky top-0 z-50">
+    <h1 class="text-3xl font-semibold tracking-tight" style="color:#374151;">Loja Estilo</h1>
+    <nav class="space-x-6 hidden sm:flex items-center" aria-label="Menu principal">
+      <a href="#produtos" class="hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-700 rounded">Produtos</a>
+      <a href="#precos" class="hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-700 rounded">Preços</a>
+      <a href="#cadastro" class="hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-700 rounded">Cadastro</a>
+      <a href="#checkout" class="hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-700 rounded">Checkout</a>
+      <button onclick="mostrarCarrinho()" class="btn-carrinho ml-4" aria-label="Abrir carrinho de compras">🛒 Carrinho</button>
+    </nav>
+  </header>
+
+  <!-- Produtos -->
+  <section id="produtos" class="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto" aria-label="Lista de produtos">
+    <article tabindex="0" class="produto-card p-5 rounded-xl shadow-sm focus:ring-2 focus:ring-gray-500 fade-in" role="region" aria-labelledby="produto1-titulo">
+      <img src="https://images.unsplash.com/photo-1585158530414-79a63eaf2b06?auto=format&fit=crop&w=600&q=80"
+           alt="Camiseta Branca" class="w-full rounded-lg mb-3" 
+           onclick="verSimilares('Camiseta Branca')" />
+      <h3 id="produto1-titulo" class="text-xl font-semibold mb-1 text-gray-900">Camiseta Branca</h3>
+      <p class="text-gray-600 mb-2">100% algodão. Tamanhos P, M, G, GG.</p>
+      <p class="text-gray-800 font-bold text-lg mb-3">R$ 49,90</p>
+      <button onclick="adicionarAoCarrinho('Camiseta Branca')" class="w-full bg-gray-700 text-white py-2 rounded hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-700">Adicionar ao Carrinho</button>
+    </article>
+
+    <article tabindex="0" class="produto-card p-5 rounded-xl shadow-sm focus:ring-2 focus:ring-gray-500 fade-in" role="region" aria-labelledby="produto2-titulo">
+      <img src="https://images.unsplash.com/photo-1602810319225-c8c6c54bc30b?auto=format&fit=crop&w=600&q=80"
+           alt="Jaqueta Jeans" class="w-full rounded-lg mb-3"
+           onclick="verSimilares('Jaqueta Jeans')" />
+      <h3 id="produto2-titulo" class="text-xl font-semibold mb-1 text-gray-900">Jaqueta Jeans</h3>
+      <p class="text-gray-600 mb-2">Modelo unissex. Alta durabilidade.</p>
+      <p class="text-gray-800 font-bold text-lg mb-3">R$ 129,90</p>
+      <button onclick="adicionarAoCarrinho('Jaqueta Jeans')" class="w-full bg-gray-700 text-white py-2 rounded hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-700">Adicionar ao Carrinho</button>
+    </article>
+
+    <article tabindex="0" class="produto-card p-5 rounded-xl shadow-sm focus:ring-2 focus:ring-gray-500 fade-in" role="region" aria-labelledby="produto3-titulo">
+      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=600&q=80"
+           alt="Tênis Casual" class="w-full rounded-lg mb-3"
+           onclick="verSimilares('Tênis Casual')" />
+      <h3 id="produto3-titulo" class="text-xl font-semibold mb-1 text-gray-900">Tênis Casual</h3>
+      <p class="text-gray-600 mb-2">Conforto para o dia a dia. Disponível nos números 35 a 44.</p>
+      <p class="text-gray-800 font-bold text-lg mb-3">R$ 199,90</p>
+      <button onclick="adicionarAoCarrinho('Tênis Casual')" class="w-full bg-gray-700 text-white py-2 rounded hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-700">Adicionar ao Carrinho</button>
+    </article>
+  </section>
+
+  <!-- Preços -->
+  <section id="precos" class="p-8 bg-white shadow-inner rounded-lg max-w-6xl mx-auto mt-10 fade-in" aria-label="Tabela de preços">
+    <h2 class="text-2xl font-semibold mb-6 text-center text-gray-900">Tabela de Preços</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <div class="border rounded-lg p-6 text-center bg-gray-50 hover:bg-gray-100 transition cursor-default">
+        <h3 class="font-semibold text-lg mb-2 text-gray-700">Básico</h3>
+        <p class="text-gray-800 text-xl mb-1 font-bold">R$ 29,90</p>
+        <p class="text-gray-600">Frete padrão</p>
+      </div>
+      <div class="border-2 border-gray-700 rounded-lg p-6 text-center bg-gray-100 shadow-md cursor-default">
+        <h3 class="font-semibold text-lg mb-2 text-gray-900">Recomendado</h3>
+        <p class="text-gray-900 text-xl mb-1 font-bold">R$ 59,90</p>
+        <p class="text-gray-700">Frete rápido + rastreamento</p>
+      </div>
+      <div class="border rounded-lg p-6 text-center bg-gray-50 hover:bg-gray-100 transition cursor-default">
+        <h3 class="font-semibold text-lg mb-2 text-gray-700">Premium</h3>
+        <p class="text-gray-800 text-xl mb-1 font-bold">R$ 99,90</p>
+        <p class="text-gray-600">Frete grátis + desconto</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cadastro -->
+  <section id="cadastro" class="p-6 max-w-md mx-auto mt-10 bg-white rounded-lg shadow-md fade-in" aria-label="Formulário de cadastro">
+    <h2 class="text-2xl font-semibold mb-4 text-gray-900">Cadastro</h2>
+    <form class="space-y-4" novalidate>
+      <input type="text" placeholder="Nome" class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-gray-700" required />
+      <input type="email" placeholder="Email" class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-gray-700" required />
+      <input type="password" placeholder="Senha" class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-gray-700" required />
+      <button type="submit" class="w-full bg-gray-700 text-white p-3 rounded hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-700">Cadastrar</button>
+    </form>
+  </section>
+
+  <!-- Checkout -->
+  <section id="checkout" class="p-6 max-w-xl mx-auto mt-10 bg-white rounded-lg shadow-md fade-in" aria-label="Formulário de finalização de compra">
+    <h2 class="text-2xl font-semibold mb-4 text-gray-900">Finalizar Compra</h2>
+    <form onsubmit="return finalizarCompra()" class="space-y-3" novalidate>
+      <input type="text" required placeholder="Nome completo" class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-gray-700" />
+      <input type="text" required placeholder="Endereço" class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-gray-700" />
+      <input type="text" required placeholder="Número do cartão" class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-gray-700" />
+      <button class="w-full bg-gray-700 text-white p-3 rounded hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-700">Pagar</button>
+    </form>
+  </section>
+
+  <!-- Carrinho (painel lateral) -->
+  <aside id="carrinho" class="fixed top-0 right-0 w-full sm:w-96 h-full bg-white shadow-lg p-6 cart-slide cart-hidden z-50" aria-label="Carrinho de compras" aria-hidden="true" role="dialog">
+    <h2 class="text-2xl font-semibold mb-4 text-gray-900">Seu Carrinho</h2>
+    <ul id="lista-carrinho" class="space-y-2 mb-6 text-lg text-gray-800" tabindex="0"></ul>
+    <button onclick="fecharCarrinho()" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-700">Fechar</button>
+  </aside>
+
+  <!-- JavaScript -->
+  <script>
+    let carrinho = [];
+
+    function adicionarAoCarrinho(produto) {
+      carrinho.push(produto);
+      atualizarCarrinho();
+      alert(produto + " adicionado ao carrinho.");
+    }
+
+    function removerDoCarrinho(index) {
+      carrinho.splice(index, 1);
+      atualizarCarrinho();
+    }
+
+    function atualizarCarrinho() {
+      const lista = document.getElementById("lista-carrinho");
+      lista.innerHTML = "";
+      if(carrinho.length === 0){
+        lista.innerHTML = "<li>Seu carrinho está vazio.</li>";
+      } else {
+        carrinho.forEach((item, index) => {
+          const li = document.createElement("li");
+          li.innerHTML = `
+            • ${item}
+            <button onclick="removerDoCarrinho(${index})" class="ml-2 text-red-600 underline text-sm">Remover</button>
+          `;
+          lista.appendChild(li);
+        });
+      }
+    }
+
+    function mostrarCarrinho() {
+      document.getElementById("carrinho").classList.remove("cart-hidden");
+      document.getElementById("carrinho").classList.add("cart-visible");
+      document.getElementById("carrinho").setAttribute("aria-hidden", "false");
+    }
+
+    function fecharCarrinho() {
+      document.getElementById("carrinho").classList.remove("cart-visible");
+      document.getElementById("carrinho").classList.add("cart-hidden");
+      document.getElementById("carrinho").setAttribute("aria-hidden", "true");
+    }
+
+    function verSimilares(produto) {
+      alert("Mostrando produtos semelhantes a: " + produto);
+    }
+
+    function finalizarCompra() {
+      if(carrinho.length === 0){
+        alert("Seu carrinho está vazio.");
+        return false;
+      }
+      alert("Compra finalizada com sucesso!");
+      carrinho = [];
+      atualizarCarrinho();
+      fecharCarrinho();
+      return false;
+    }
+
+    // Inicializa carrinho vazio
+    atualizarCarrinho();
+  </script>
+</body>
+</html>
+
+
